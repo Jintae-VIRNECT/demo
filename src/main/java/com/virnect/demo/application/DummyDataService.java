@@ -33,48 +33,48 @@ public class DummyDataService {
 			.temperatureSensors(IntStream.rangeClosed(1, 5)
 				.mapToObj(i -> SensorData.TemperatureSensor.builder()
 					.id(i)
-					.value(random.nextInt(101))
+					.value(7 + random.nextInt(14)) // 7~20 범위의 값
 					.build())
 				.toList())
-			.vibrationSensor(List.of(SensorData.VibrationSensor.builder()
+			.speeds(List.of(SensorData.Speed.builder() // Speed로 교체
 				.id(1)
-				.value(random.nextInt(101))
+				.value(75 + random.nextInt(21)) // 75~95 범위의 값
 				.build()))
 			.waterLevels(IntStream.rangeClosed(1, 5)
 				.mapToObj(i -> SensorData.WaterLevel.builder()
 					.id(i)
-					.value(random.nextInt(101))
+					.value(random.nextInt(101)) // 기존 요구사항 유지
 					.build())
 				.toList())
 			.flows(IntStream.rangeClosed(1, 3)
 				.mapToObj(i -> SensorData.Flow.builder()
 					.id(i)
-					.value(random.nextInt(101))
+					.value(30 + random.nextInt(31)) // 30~60 범위의 값
 					.build())
 				.toList())
 			.valves(IntStream.rangeClosed(1, 3)
 				.mapToObj(i -> SensorData.Valve.builder()
 					.id(i)
-					.value(random.nextBoolean())
+					.value(random.nextBoolean()) // 기존 요구사항 유지
 					.build())
 				.toList())
 			.pumps(IntStream.rangeClosed(1, 2)
 				.mapToObj(i -> SensorData.Pump.builder()
 					.id(i)
-					.value(random.nextBoolean())
+					.value(random.nextBoolean()) // 기존 요구사항 유지
 					.build())
 				.toList())
 			.rotaryMotor(SensorData.RotaryMotor.builder()
 				.id(1)
-				.value(random.nextBoolean())
+				.value(random.nextBoolean()) // 기존 요구사항 유지
 				.build())
 			.motorSpeedControl(SensorData.Motor.builder()
 				.id(1)
-				.value(random.nextInt(101))
+				.value(random.nextInt(101)) // 기존 요구사항 유지
 				.build())
 			.motorSpeedMonitor(SensorData.Motor.builder()
 				.id(1)
-				.value(random.nextInt(101))
+				.value(random.nextInt(101)) // 기존 요구사항 유지
 				.build())
 			.build();
 	}

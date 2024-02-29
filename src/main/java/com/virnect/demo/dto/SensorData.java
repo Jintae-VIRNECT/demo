@@ -26,7 +26,7 @@ public class SensorData {
 	@Builder.Default
 	private List<TemperatureSensor> temperatureSensors = new ArrayList<>();
 	@Builder.Default
-	private List<VibrationSensor> vibrationSensor = new ArrayList<>();
+	private List<Speed> speeds = new ArrayList<>();
 	@Builder.Default
 	private List<WaterLevel> waterLevels = new ArrayList<>();
 	@Builder.Default
@@ -48,7 +48,7 @@ public class SensorData {
 
 	@Getter
 	@Builder
-	public static class VibrationSensor {
+	public static class Speed {
 		private int id;
 		private int value;
 	}
